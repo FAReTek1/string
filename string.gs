@@ -74,7 +74,8 @@ func uppercase(text) {
     local i = 1;
     repeat length($text) {
         local j = 1;
-        until $text[i] == ASCII_UPPERCASE[j] or j > 26 {
+        # This also detects for empty string, which happens when j is out of range of ASCII_UPPERCASE, i.e j > 26
+        until ASCII_UPPERCASE[j] in $text[i] {
             j++;
         }
         if j > 26 {

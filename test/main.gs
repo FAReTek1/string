@@ -4,5 +4,5 @@ costumes "blank.svg";
 %include inflator/string
 
 onflag {
-    # assert_eq 
+    assert_eq uppercase("test..?"), "TEST..?", "uppercase";
 }
